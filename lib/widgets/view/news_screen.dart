@@ -76,18 +76,15 @@ class NewsScreen extends StatelessWidget {
                           Expanded(
                             child: GestureDetector(
                               onTap: () {
-                                SchedulerBinding.instance
-                                    .addPostFrameCallback((_) {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      ///routes to NewsDetails screen with data
-                                      builder: (context) => NewsDetails(
-                                          state.results![index].title,
-                                          state.results![index].domain),
-                                    ),
-                                  );
-                                });
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    ///routes to NewsDetails screen with data
+                                    builder: (context) => NewsDetails(
+                                        state.results![index].title,
+                                        state.results![index].domain),
+                                  ),
+                                );
                               },
                               child: Text(
                                 ///shows slug
